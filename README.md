@@ -48,6 +48,6 @@ All examples are synthetic and use reserved documentation networks.
 
 Credentials come from Windows Credential Manager or environment variables and never belong in inventory or SQLite. SSH host keys must be verified and enrolled. Terminal chat transmits relevant device output to the configured OpenAI API; use direct CLI or MCP inspection when output must remain local.
 
-Start with [INSTALL.md](INSTALL.md). See [inventory](docs/INVENTORY.md), [CLI](docs/CLI.md), [MCP](docs/MCP.md), [controlled changes](docs/CONFIGURATION_CHANGES.md), [architecture](docs/ARCHITECTURE.md), and [troubleshooting](docs/TROUBLESHOOTING.md). Contributions and security reports are covered by [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
+Start with [INSTALL.md](INSTALL.md). See [command examples](docs/COMMAND_EXAMPLES.md), [inventory](docs/INVENTORY.md), [CLI](docs/CLI.md), [MCP](docs/MCP.md), [controlled changes](docs/CONFIGURATION_CHANGES.md), [architecture](docs/ARCHITECTURE.md), and [troubleshooting](docs/TROUBLESHOOTING.md). Contributions and security reports are covered by [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
 
 Licensed under [Apache-2.0](LICENSE).
