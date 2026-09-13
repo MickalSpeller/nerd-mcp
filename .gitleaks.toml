@@ -1,0 +1,10 @@
+title = "NERD MCP synthetic-fixture allowlist"
+
+[allowlist]
+description = "Only the deliberately fake private-key redaction fixture is allowed."
+paths = [
+  '''tests/test_network\.py''',
+]
+regexes = [
+  '''secret-data\nmore-data''',
+]

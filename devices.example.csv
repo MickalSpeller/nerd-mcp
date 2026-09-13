@@ -1,0 +1,4 @@
+name,host,port,credential_profile,device_hostname,location,street_address,city,state,zip_code,country,serial_number,model,device_type,vendor,platform
+edge-router-01,192.0.2.10,22,default,edge-router-01,Example HQ,100 Example Avenue,Example City,CA,90001,USA,SYN-CISCO-0001,C8000V,router,Cisco,IOS-XE
+access-switch-01,198.51.100.20,22,branch,access-switch-01,Example Branch,200 Sample Street,Sample City,TX,75001,USA,SYN-ARUBA-0001,6200F,switch,Aruba,AOS-CX
+firewall-01,203.0.113.30,22,default,firewall-01,Example Data Center,300 Documentation Drive,Test City,VA,20101,USA,SYN-FGT-0001,FortiGate-VM64,firewall,Fortinet,FortiOS

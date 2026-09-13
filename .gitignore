@@ -1,0 +1,50 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest_tmp*/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+known_hosts
+*.pem
+*.key
+
+# Runtime state and operational exports
+*.db
+*.db-*
+*.sqlite*
+devices.csv
+devices.xlsx
+inventory*.csv
+inventory*.xlsx
+*.log
+logs/
+snapshots/
+exports/
+*-running-config.txt
+*-startup-config.txt
+topology.mmd
+
+# Editors, operating systems, and temporary files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*.tmp
+~$*

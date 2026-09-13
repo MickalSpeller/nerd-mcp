@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nerd-mcp-assistant"
+version = "1.7.0"
+description = "Vendor-agnostic Network Engineering Reconnaissance & Discovery tools and terminal assistant"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+keywords = ["mcp", "network-automation", "netmiko", "network-engineering", "openai"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: System :: Networking",
+]
+dependencies = ["netmiko==4.7.0", "paramiko==4.0.0", "jsonschema==4.26.0", "openpyxl==3.1.5", "rich==15.0.0", "pywin32==312; sys_platform == 'win32'"]
+
+[project.optional-dependencies]
+chat = ["openai==3.8.0"]
+mcp = ["mcp==1.30.0"]
+full = ["openai==3.8.0", "mcp==1.30.0"]
+test = ["pytest==9.1.1", "pytest-asyncio==1.4.0", "openai==3.8.0", "mcp==1.30.0"]
+
+[project.scripts]
+nerd-mcp = "nerd_mcp.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["nerd_mcp*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

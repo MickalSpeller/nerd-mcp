@@ -1,0 +1,1330 @@
+{
+  "refresh_single": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"device\": \"alpha\",\n    \"commands\": [\n      \"show running-config | include ^hostname\",\n      \"show inventory\",\n      \"show running-config | include ^snmp-server location\",\n      \"show version\"\n    ],\n    \"timestamp\": \"<timestamp>\",\n    \"status\": \"success\",\n    \"facts\": {\n      \"device_hostname\": \"mock-device\",\n      \"serial_number\": \"FOC1234ABCD\",\n      \"model\": \"C9300-24T\",\n      \"location\": \"Example Lab\"\n    },\n    \"warning\": null,\n    \"error\": null,\n    \"mock\": true,\n    \"record\": {\n      \"name\": \"alpha\",\n      \"host\": \"192.0.2.1\",\n      \"port\": 22,\n      \"credential_profile\": \"default\",\n      \"device_hostname\": \"mock-device\",\n      \"location\": \"Example Lab\",\n      \"street_address\": \"\",\n      \"city\": \"\",\n      \"state\": \"\",\n      \"zip_code\": \"\",\n      \"country\": \"\",\n      \"serial_number\": \"FOC1234ABCD\",\n      \"model\": \"C9300-24T\",\n      \"device_type\": \"\",\n      \"vendor\": \"Cisco\",\n      \"platform\": \"IOS/IOS-XE\",\n      \"facts_updated_at\": \"<timestamp>\",\n      \"location_source\": \"device\"\n    }\n  }\n]\n",
+    "stderr": "--------------------------------------------------------------------------------\nCompleted in 1.00s | OpenAI: Not used | MCP: Not used\nData: Local inventory + Mock device\n"
+  },
+  "refresh_all": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"device\": \"alpha\",\n    \"commands\": [\n      \"show running-config | include ^hostname\",\n      \"show inventory\",\n      \"show running-config | include ^snmp-server location\",\n      \"show version\"\n    ],\n    \"timestamp\": \"<timestamp>\",\n    \"status\": \"success\",\n    \"facts\": {\n      \"device_hostname\": \"mock-device\",\n      \"serial_number\": \"FOC1234ABCD\",\n      \"model\": \"C9300-24T\",\n      \"location\": \"Example Lab\"\n    },\n    \"warning\": null,\n    \"error\": null,\n    \"mock\": true,\n    \"record\": {\n      \"name\": \"alpha\",\n      \"host\": \"192.0.2.1\",\n      \"port\": 22,\n      \"credential_profile\": \"default\",\n      \"device_hostname\": \"mock-device\",\n      \"location\": \"Example Lab\",\n      \"street_address\": \"\",\n      \"city\": \"\",\n      \"state\": \"\",\n      \"zip_code\": \"\",\n      \"country\": \"\",\n      \"serial_number\": \"FOC1234ABCD\",\n      \"model\": \"C9300-24T\",\n      \"device_type\": \"\",\n      \"vendor\": \"Cisco\",\n      \"platform\": \"IOS/IOS-XE\",\n      \"facts_updated_at\": \"<timestamp>\",\n      \"location_source\": \"device\"\n    }\n  },\n  {\n    \"device\": \"beta\",\n    \"commands\": [\n      \"show running-config | include ^hostname\",\n      \"show inventory\",\n      \"show running-config | include ^snmp-server location\",\n      \"show version\"\n    ],\n    \"timestamp\": \"<timestamp>\",\n    \"status\": \"success\",\n    \"facts\": {\n      \"device_hostname\": \"mock-device\",\n      \"serial_number\": \"FOC1234ABCD\",\n      \"model\": \"C9300-24T\",\n      \"location\": \"Example Lab\"\n    },\n    \"warning\": null,\n    \"error\": null,\n    \"mock\": true,\n    \"record\": {\n      \"name\": \"beta\",\n      \"host\": \"192.0.2.2\",\n      \"port\": 22,\n      \"credential_profile\": \"default\",\n      \"device_hostname\": \"mock-device\",\n      \"location\": \"Operator location\",\n      \"street_address\": \"\",\n      \"city\": \"\",\n      \"state\": \"\",\n      \"zip_code\": \"\",\n      \"country\": \"\",\n      \"serial_number\": \"FOC1234ABCD\",\n      \"model\": \"C9300-24T\",\n      \"device_type\": \"\",\n      \"vendor\": \"Cisco\",\n      \"platform\": \"IOS/IOS-XE\",\n      \"facts_updated_at\": \"<timestamp>\",\n      \"location_source\": \"csv\"\n    }\n  }\n]\n",
+    "stderr": "--------------------------------------------------------------------------------\nCompleted in 1.00s | OpenAI: Not used | MCP: Not used\nData: Local inventory + Mock device\n"
+  },
+  "refresh_unknown": {
+    "exit_code": 1,
+    "stdout": "[\n  {\n    \"device\": \"missing\",\n    \"commands\": [],\n    \"timestamp\": \"<timestamp>\",\n    \"status\": \"error\",\n    \"facts\": {},\n    \"warning\": null,\n    \"error\": \"Unknown device; use devices list to select an inventoried name.\",\n    \"mock\": true\n  }\n]\n",
+    "stderr": "--------------------------------------------------------------------------------\nCompleted in 1.00s | OpenAI: Not used | MCP: Not used\nData: Local inventory\n"
+  },
+  "refresh_empty": {
+    "exit_code": 0,
+    "stdout": "[]\n",
+    "stderr": "--------------------------------------------------------------------------------\nCompleted in 1.00s | OpenAI: Not used | MCP: Not used\nData: Local inventory\n"
+  },
+  "health_json": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"device\": \"alpha\",\n    \"commands\": [\n      \"show version\",\n      \"show ip interface brief\",\n      \"show interfaces\",\n      \"show ip route\",\n      \"show ip ospf neighbor\",\n      \"show ip bgp summary\",\n      \"show processes cpu sorted\",\n      \"show processes memory sorted\"\n    ],\n    \"timestamp\": \"<timestamp>\",\n    \"status\": \"success\",\n    \"overall\": \"healthy\",\n    \"complete\": true,\n    \"counts\": {\n      \"critical\": 0,\n      \"warning\": 0,\n      \"ok\": 9,\n      \"info\": 0\n    },\n    \"metrics\": {\n      \"interfaces_total\": 2,\n      \"interfaces_up\": 1,\n      \"interfaces_down\": 0,\n      \"interfaces_admin_down\": 1,\n      \"routes\": 2,\n      \"default_route\": true,\n      \"ospf_neighbors\": 1,\n      \"ospf_not_full\": 0,\n      \"bgp_neighbors\": 1,\n      \"bgp_not_established\": 0,\n      \"cpu_five_minute_percent\": 3,\n      \"memory_free_percent\": 60.0,\n      \"uptime\": \"2 weeks\"\n    },\n    \"checks\": [\n      {\n        \"id\": \"uptime\",\n        \"category\": \"system\",\n        \"severity\": \"ok\",\n        \"summary\": \"Device uptime is 2 weeks.\"\n      },\n      {\n        \"id\": \"interface_summary\",\n        \"category\": \"interfaces\",\n        \"severity\": \"ok\",\n        \"summary\": \"1 of 2 IP interfaces are up/up; 1 are administratively down.\"\n      },\n      {\n        \"id\": \"interface_errors\",\n        \"category\": \"interfaces\",\n        \"severity\": \"ok\",\n        \"summary\": \"No interface input, CRC, or output errors were reported.\"\n      },\n      {\n        \"id\": \"routing_table\",\n        \"category\": \"routing\",\n        \"severity\": \"ok\",\n        \"summary\": \"2 IPv4 routes were recognized.\"\n      },\n      {\n        \"id\": \"default_route\",\n        \"category\": \"routing\",\n        \"severity\": \"ok\",\n        \"summary\": \"A default IPv4 route is installed.\"\n      },\n      {\n        \"id\": \"ospf_neighbors\",\n        \"category\": \"routing protocols\",\n        \"severity\": \"ok\",\n        \"summary\": \"All 1 OSPF neighbors are FULL.\"\n      },\n      {\n        \"id\": \"bgp_neighbors\",\n        \"category\": \"routing protocols\",\n        \"severity\": \"ok\",\n        \"summary\": \"All 1 BGP peers are established.\"\n      },\n      {\n        \"id\": \"cpu\",\n        \"category\": \"resources\",\n        \"severity\": \"ok\",\n        \"summary\": \"CPU utilization is 5% (5 sec), 4% (1 min), and 3% (5 min).\"\n      },\n      {\n        \"id\": \"memory\",\n        \"category\": \"resources\",\n        \"severity\": \"ok\",\n        \"summary\": \"Processor memory is 60.0% free.\"\n      }\n    ],\n    \"error\": null,\n    \"mock\": true\n  },\n  {\n    \"device\": \"beta\",\n    \"commands\": [\n      \"show version\",\n      \"show ip interface brief\",\n      \"show interfaces\",\n      \"show ip route\",\n      \"show ip ospf neighbor\",\n      \"show ip bgp summary\",\n      \"show processes cpu sorted\",\n      \"show processes memory sorted\"\n    ],\n    \"timestamp\": \"<timestamp>\",\n    \"status\": \"success\",\n    \"overall\": \"healthy\",\n    \"complete\": true,\n    \"counts\": {\n      \"critical\": 0,\n      \"warning\": 0,\n      \"ok\": 9,\n      \"info\": 0\n    },\n    \"metrics\": {\n      \"interfaces_total\": 2,\n      \"interfaces_up\": 1,\n      \"interfaces_down\": 0,\n      \"interfaces_admin_down\": 1,\n      \"routes\": 2,\n      \"default_route\": true,\n      \"ospf_neighbors\": 1,\n      \"ospf_not_full\": 0,\n      \"bgp_neighbors\": 1,\n      \"bgp_not_established\": 0,\n      \"cpu_five_minute_percent\": 3,\n      \"memory_free_percent\": 60.0,\n      \"uptime\": \"2 weeks\"\n    },\n    \"checks\": [\n      {\n        \"id\": \"uptime\",\n        \"category\": \"system\",\n        \"severity\": \"ok\",\n        \"summary\": \"Device uptime is 2 weeks.\"\n      },\n      {\n        \"id\": \"interface_summary\",\n        \"category\": \"interfaces\",\n        \"severity\": \"ok\",\n        \"summary\": \"1 of 2 IP interfaces are up/up; 1 are administratively down.\"\n      },\n      {\n        \"id\": \"interface_errors\",\n        \"category\": \"interfaces\",\n        \"severity\": \"ok\",\n        \"summary\": \"No interface input, CRC, or output errors were reported.\"\n      },\n      {\n        \"id\": \"routing_table\",\n        \"category\": \"routing\",\n        \"severity\": \"ok\",\n        \"summary\": \"2 IPv4 routes were recognized.\"\n      },\n      {\n        \"id\": \"default_route\",\n        \"category\": \"routing\",\n        \"severity\": \"ok\",\n        \"summary\": \"A default IPv4 route is installed.\"\n      },\n      {\n        \"id\": \"ospf_neighbors\",\n        \"category\": \"routing protocols\",\n        \"severity\": \"ok\",\n        \"summary\": \"All 1 OSPF neighbors are FULL.\"\n      },\n      {\n        \"id\": \"bgp_neighbors\",\n        \"category\": \"routing protocols\",\n        \"severity\": \"ok\",\n        \"summary\": \"All 1 BGP peers are established.\"\n      },\n      {\n        \"id\": \"cpu\",\n        \"category\": \"resources\",\n        \"severity\": \"ok\",\n        \"summary\": \"CPU utilization is 5% (5 sec), 4% (1 min), and 3% (5 min).\"\n      },\n      {\n        \"id\": \"memory\",\n        \"category\": \"resources\",\n        \"severity\": \"ok\",\n        \"summary\": \"Processor memory is 60.0% free.\"\n      }\n    ],\n    \"error\": null,\n    \"mock\": true\n  }\n]\n",
+    "stderr": "--------------------------------------------------------------------------------\nCompleted in 1.00s | OpenAI: Not used | MCP: Not used\nData: Local inventory + Mock device\n"
+  },
+  "health_terminal": {
+    "exit_code": 0,
+    "stdout": "                              Network Health                               \n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Device       \u2502 Health   \u2502 Issues    \u2502 Interfaces \u2502 Resources  \u2502 Route   \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 alpha        \u2502 HEALTHY  \u2502 0C / 0W   \u2502 1/2 up     \u2502 CPU 3%     \u2502 yes     \u2502\n\u2502              \u2502          \u2502           \u2502            \u2502 Mem 60.0%  \u2502         \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n",
+    "stderr": "--------------------------------------------------------------------------------\nCompleted in 1.00s | OpenAI: Not used | MCP: Not used\nData: Local inventory + Mock device\n"
+  },
+  "health_unknown": {
+    "exit_code": 1,
+    "stdout": "[\n  {\n    \"device\": \"missing\",\n    \"commands\": [],\n    \"timestamp\": \"<timestamp>\",\n    \"status\": \"error\",\n    \"overall\": \"unknown\",\n    \"complete\": false,\n    \"counts\": {\n      \"critical\": 0,\n      \"warning\": 0,\n      \"ok\": 0,\n      \"info\": 0\n    },\n    \"metrics\": {},\n    \"checks\": [],\n    \"error\": \"Unknown device; use devices list to select an inventoried name.\",\n    \"mock\": true\n  }\n]\n",
+    "stderr": "--------------------------------------------------------------------------------\nCompleted in 1.00s | OpenAI: Not used | MCP: Not used\nData: Local inventory\n"
+  },
+  "health_empty": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "No devices are inventoried.\n--------------------------------------------------------------------------------\nCompleted in 1.00s | OpenAI: Not used | MCP: Not used\nData: Local inventory\n"
+  },
+  "health_no_footer": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"device\": \"alpha\",\n    \"commands\": [\n      \"show version\",\n      \"show ip interface brief\",\n      \"show interfaces\",\n      \"show ip route\",\n      \"show ip ospf neighbor\",\n      \"show ip bgp summary\",\n      \"show processes cpu sorted\",\n      \"show processes memory sorted\"\n    ],\n    \"timestamp\": \"<timestamp>\",\n    \"status\": \"success\",\n    \"overall\": \"healthy\",\n    \"complete\": true,\n    \"counts\": {\n      \"critical\": 0,\n      \"warning\": 0,\n      \"ok\": 9,\n      \"info\": 0\n    },\n    \"metrics\": {\n      \"interfaces_total\": 2,\n      \"interfaces_up\": 1,\n      \"interfaces_down\": 0,\n      \"interfaces_admin_down\": 1,\n      \"routes\": 2,\n      \"default_route\": true,\n      \"ospf_neighbors\": 1,\n      \"ospf_not_full\": 0,\n      \"bgp_neighbors\": 1,\n      \"bgp_not_established\": 0,\n      \"cpu_five_minute_percent\": 3,\n      \"memory_free_percent\": 60.0,\n      \"uptime\": \"2 weeks\"\n    },\n    \"checks\": [\n      {\n        \"id\": \"uptime\",\n        \"category\": \"system\",\n        \"severity\": \"ok\",\n        \"summary\": \"Device uptime is 2 weeks.\"\n      },\n      {\n        \"id\": \"interface_summary\",\n        \"category\": \"interfaces\",\n        \"severity\": \"ok\",\n        \"summary\": \"1 of 2 IP interfaces are up/up; 1 are administratively down.\"\n      },\n      {\n        \"id\": \"interface_errors\",\n        \"category\": \"interfaces\",\n        \"severity\": \"ok\",\n        \"summary\": \"No interface input, CRC, or output errors were reported.\"\n      },\n      {\n        \"id\": \"routing_table\",\n        \"category\": \"routing\",\n        \"severity\": \"ok\",\n        \"summary\": \"2 IPv4 routes were recognized.\"\n      },\n      {\n        \"id\": \"default_route\",\n        \"category\": \"routing\",\n        \"severity\": \"ok\",\n        \"summary\": \"A default IPv4 route is installed.\"\n      },\n      {\n        \"id\": \"ospf_neighbors\",\n        \"category\": \"routing protocols\",\n        \"severity\": \"ok\",\n        \"summary\": \"All 1 OSPF neighbors are FULL.\"\n      },\n      {\n        \"id\": \"bgp_neighbors\",\n        \"category\": \"routing protocols\",\n        \"severity\": \"ok\",\n        \"summary\": \"All 1 BGP peers are established.\"\n      },\n      {\n        \"id\": \"cpu\",\n        \"category\": \"resources\",\n        \"severity\": \"ok\",\n        \"summary\": \"CPU utilization is 5% (5 sec), 4% (1 min), and 3% (5 min).\"\n      },\n      {\n        \"id\": \"memory\",\n        \"category\": \"resources\",\n        \"severity\": \"ok\",\n        \"summary\": \"Processor memory is 60.0% free.\"\n      }\n    ],\n    \"error\": null,\n    \"mock\": true\n  }\n]\n",
+    "stderr": ""
+  },
+  "refresh_write_failure": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Cannot access the CSV, database or local process. Check paths and permissions.\n--------------------------------------------------------------------------------\nCompleted in 1.00s | OpenAI: Not used | MCP: Not used\nData: Local inventory + Mock device\n"
+  },
+  "mcp_tools": [
+    {
+      "name": "list_devices",
+      "title": null,
+      "description": "List device inventory records, including identity and location metadata.",
+      "inputSchema": {
+        "properties": {},
+        "title": "list_devicesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "list_devicesDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_inventory_device",
+      "title": null,
+      "description": "Get one local inventory record without connecting. Blank identity fields are not proof\n        that the device lacks those values; use get_device_facts for a live read-only lookup.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device"
+        ],
+        "title": "get_inventory_deviceArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_inventory_deviceDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "search_devices",
+      "title": null,
+      "description": "Search local inventory. Pass an empty string for every unused filter. City, state,\n        device_type and country are exact case-insensitive matches; location and hostname are partial.",
+      "inputSchema": {
+        "properties": {
+          "city": {
+            "title": "City",
+            "type": "string"
+          },
+          "state": {
+            "title": "State",
+            "type": "string"
+          },
+          "location": {
+            "title": "Location",
+            "type": "string"
+          },
+          "device_type": {
+            "title": "Device Type",
+            "type": "string"
+          },
+          "hostname": {
+            "title": "Hostname",
+            "type": "string"
+          },
+          "country": {
+            "title": "Country",
+            "type": "string"
+          },
+          "serial_number": {
+            "title": "Serial Number",
+            "type": "string"
+          },
+          "model": {
+            "title": "Model",
+            "type": "string"
+          },
+          "vendor": {
+            "title": "Vendor",
+            "type": "string"
+          },
+          "platform": {
+            "title": "Platform",
+            "type": "string"
+          }
+        },
+        "required": [
+          "city",
+          "state",
+          "location",
+          "device_type",
+          "hostname",
+          "country",
+          "serial_number",
+          "model",
+          "vendor",
+          "platform"
+        ],
+        "title": "search_devicesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "search_devicesDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_device_info",
+      "title": null,
+      "description": "Read version, hardware and uptime from a supported inventoried device.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device"
+        ],
+        "title": "get_device_infoArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_device_infoDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_device_facts",
+      "title": null,
+      "description": "Read current hostname, chassis serial number, model, and device-reported location.\n        This live lookup does not save or change the local inventory.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device"
+        ],
+        "title": "get_device_factsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_device_factsDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_interfaces",
+      "title": null,
+      "description": "Read IPv4 interface addresses and operational status.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device"
+        ],
+        "title": "get_interfacesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_interfacesDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_vlans",
+      "title": null,
+      "description": "Read VLAN or logical-interface information supported by the device adapter.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device"
+        ],
+        "title": "get_vlansArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_vlansDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_routes",
+      "title": null,
+      "description": "Read the default IPv4 routing table (not VRF-specific routes).",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device"
+        ],
+        "title": "get_routesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_routesDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_neighbors",
+      "title": null,
+      "description": "Read CDP or LLDP neighbors; empty results do not prove no physical neighbors exist.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device"
+        ],
+        "title": "get_neighborsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_neighborsDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_health",
+      "title": null,
+      "description": "Run fixed adapter-specific health checks and return parsed severity, metrics, and findings.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device"
+        ],
+        "title": "get_healthArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_healthDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_ospf_status",
+      "title": null,
+      "description": "Read current OSPF process state and neighbor adjacencies with fixed adapter commands.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device"
+        ],
+        "title": "get_ospf_statusArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_ospf_statusDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_bgp_status",
+      "title": null,
+      "description": "Read current BGP router identity and peer summary. Returns each neighbor's\n        established state, Up/Down duration, remote AS, and received-prefix count.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device"
+        ],
+        "title": "get_bgp_statusArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_bgp_statusDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_bgp_configuration",
+      "title": null,
+      "description": "Read the sanitized, filtered live BGP configuration section for one device.\n        Use with get_bgp_status on both peers when diagnosing a BGP relationship.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device"
+        ],
+        "title": "get_bgp_configurationArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_bgp_configurationDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_bgp_routes",
+      "title": null,
+      "description": "Read the current BGP routing table using a fixed platform command.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device"
+        ],
+        "title": "get_bgp_routesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_bgp_routesDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_vpn_status",
+      "title": null,
+      "description": "Read current FortiOS IPsec tunnel and SSL-VPN session status. Reports whether\n        both checks completed so unavailable output cannot be mistaken for no active VPNs.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device"
+        ],
+        "title": "get_vpn_statusArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_vpn_statusDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "refresh_mac_observations",
+      "title": null,
+      "description": "Collect current MAC, ARP, neighbor, trunk, and interface observations from one\n        inventoried device or target 'all'. Uses fixed read-only adapter commands and 1-16 workers.",
+      "inputSchema": {
+        "properties": {
+          "target": {
+            "title": "Target",
+            "type": "string"
+          },
+          "workers": {
+            "title": "Workers",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "target",
+          "workers"
+        ],
+        "title": "refresh_mac_observationsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "refresh_mac_observationsDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "locate_mac",
+      "title": null,
+      "description": "Locate one unicast MAC in the local observation index. Accept common MAC formats.\n        Reports ranked matches, IP correlation, data age, and incomplete device scans.",
+      "inputSchema": {
+        "properties": {
+          "mac_address": {
+            "title": "Mac Address",
+            "type": "string"
+          },
+          "max_age_minutes": {
+            "title": "Max Age Minutes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "mac_address",
+          "max_age_minutes"
+        ],
+        "title": "locate_macArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "locate_macDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "troubleshoot_mac",
+      "title": null,
+      "description": "Troubleshoot one MAC using cached location, ARP, topology, and interface health data.",
+      "inputSchema": {
+        "properties": {
+          "mac_address": {
+            "title": "Mac Address",
+            "type": "string"
+          },
+          "max_age_minutes": {
+            "title": "Max Age Minutes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "mac_address",
+          "max_age_minutes"
+        ],
+        "title": "troubleshoot_macArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "troubleshoot_macDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_device_macs",
+      "title": null,
+      "description": "List the complete normalized MAC table for one inventoried device from local\n        observations. Reports freshness and completeness; refresh stale data separately.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          },
+          "max_age_minutes": {
+            "title": "Max Age Minutes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "device",
+          "max_age_minutes"
+        ],
+        "title": "get_device_macsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_device_macsDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_device_arps",
+      "title": null,
+      "description": "List the complete normalized ARP table for one inventoried device from local\n        observations. Reports IP, MAC, interface, VRF, freshness, and completeness;\n        refresh stale data separately.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          },
+          "max_age_minutes": {
+            "title": "Max Age Minutes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "device",
+          "max_age_minutes"
+        ],
+        "title": "get_device_arpsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_device_arpsDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_interface_macs",
+      "title": null,
+      "description": "List learned MAC addresses on one interface from the local observation index.\n        Common interface abbreviations are equivalent. Reports freshness and scan completeness.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          },
+          "interface": {
+            "title": "Interface",
+            "type": "string"
+          },
+          "max_age_minutes": {
+            "title": "Max Age Minutes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "device",
+          "interface",
+          "max_age_minutes"
+        ],
+        "title": "get_interface_macsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_interface_macsDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "locate_endpoint",
+      "title": null,
+      "description": "Locate an endpoint by IPv4 address, unicast MAC, or exact inventoried hostname.\n        Set refresh true for current ARP, MAC, interface, and topology observations. An empty\n        source_device lets NERD infer the observed path root. Workers must be 1-16.",
+      "inputSchema": {
+        "properties": {
+          "identifier": {
+            "title": "Identifier",
+            "type": "string"
+          },
+          "source_device": {
+            "title": "Source Device",
+            "type": "string"
+          },
+          "max_age_minutes": {
+            "title": "Max Age Minutes",
+            "type": "integer"
+          },
+          "refresh": {
+            "title": "Refresh",
+            "type": "boolean"
+          },
+          "workers": {
+            "title": "Workers",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "identifier",
+          "source_device",
+          "max_age_minutes",
+          "refresh",
+          "workers"
+        ],
+        "title": "locate_endpointArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "locate_endpointDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "trace_ospf_route",
+      "title": null,
+      "description": "Trace an exact IPv4 OSPF route from an inventoried Cisco IOS/IOS-XE observer.\n        Correlates the next hop and route-source router ID with live interfaces on inventory\n        devices. Workers must be 1-16. Reports confidence and incomplete device checks.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          },
+          "destination": {
+            "title": "Destination",
+            "type": "string"
+          },
+          "workers": {
+            "title": "Workers",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "device",
+          "destination",
+          "workers"
+        ],
+        "title": "trace_ospf_routeArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "trace_ospf_routeDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_configuration",
+      "title": null,
+      "description": "Read a sanitized configuration page. Source is running or startup. Start with cursor 0\n        and revision \"\", then use each returned next_cursor and revision until complete is true.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          },
+          "source": {
+            "enum": [
+              "running",
+              "startup"
+            ],
+            "title": "Source",
+            "type": "string"
+          },
+          "cursor": {
+            "title": "Cursor",
+            "type": "integer"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device",
+          "source",
+          "cursor",
+          "revision"
+        ],
+        "title": "get_configurationArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_configurationDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "list_configuration_baselines",
+      "title": null,
+      "description": "List retained sanitized configuration baseline metadata without connecting to devices.",
+      "inputSchema": {
+        "properties": {},
+        "title": "list_configuration_baselinesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "list_configuration_baselinesDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_configuration_baseline",
+      "title": null,
+      "description": "Read a stored sanitized baseline page without SSH. Start with cursor 0 and revision \"\",\n        then use next_cursor and the same revision until complete is true.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          },
+          "cursor": {
+            "title": "Cursor",
+            "type": "integer"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device",
+          "cursor",
+          "revision"
+        ],
+        "title": "get_configuration_baselineArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_configuration_baselineDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "compare_configuration_baseline",
+      "title": null,
+      "description": "Fetch the current configuration and compare it with the retained baseline. Start with\n        cursor 0 and revision \"\", then use next_cursor and comparison_revision until complete.\n        The unified diff is sanitized but can still reveal sensitive network details.",
+      "inputSchema": {
+        "properties": {
+          "device": {
+            "title": "Device",
+            "type": "string"
+          },
+          "cursor": {
+            "title": "Cursor",
+            "type": "integer"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device",
+          "cursor",
+          "revision"
+        ],
+        "title": "compare_configuration_baselineArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "compare_configuration_baselineDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "compare_all_configuration_baselines",
+      "title": null,
+      "description": "Compare every inventory device with its retained baseline using 1-16 workers.\n        Returns compact changed, unchanged, missing, and failed results without full diffs.",
+      "inputSchema": {
+        "properties": {
+          "workers": {
+            "title": "Workers",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "workers"
+        ],
+        "title": "compare_all_configuration_baselinesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "compare_all_configuration_baselinesDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_configuration_baseline_status",
+      "title": null,
+      "description": "Read local baseline age and latest comparison status for every inventory device.\n        Marks baselines older than max_age_days stale. Does not connect to devices.",
+      "inputSchema": {
+        "properties": {
+          "max_age_days": {
+            "title": "Max Age Days",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "max_age_days"
+        ],
+        "title": "get_configuration_baseline_statusArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_configuration_baseline_statusDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "discover_topology",
+      "title": null,
+      "description": "Refresh vendor-adapted CDP/LLDP observations for one device or target 'all', then\n        correlate links with inventory. Uses 1-16 workers and reports incomplete coverage.",
+      "inputSchema": {
+        "properties": {
+          "target": {
+            "title": "Target",
+            "type": "string"
+          },
+          "workers": {
+            "title": "Workers",
+            "type": "integer"
+          },
+          "max_age_minutes": {
+            "title": "Max Age Minutes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "target",
+          "workers",
+          "max_age_minutes"
+        ],
+        "title": "discover_topologyArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "discover_topologyDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_topology",
+      "title": null,
+      "description": "Build inventory-correlated topology from cached observations without SSH.\n        Target is one inventory device or 'all'; freshness is 1-10080 minutes.",
+      "inputSchema": {
+        "properties": {
+          "target": {
+            "title": "Target",
+            "type": "string"
+          },
+          "max_age_minutes": {
+            "title": "Max Age Minutes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "target",
+          "max_age_minutes"
+        ],
+        "title": "get_topologyArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_topologyDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_topology_diagram",
+      "title": null,
+      "description": "Render cached inventory-correlated topology as text or Mermaid without SSH.\n        Location can be empty or an inventory location, city, state, ZIP, or country filter.",
+      "inputSchema": {
+        "properties": {
+          "target": {
+            "title": "Target",
+            "type": "string"
+          },
+          "location": {
+            "title": "Location",
+            "type": "string"
+          },
+          "max_age_minutes": {
+            "title": "Max Age Minutes",
+            "type": "integer"
+          },
+          "format": {
+            "enum": [
+              "text",
+              "mermaid"
+            ],
+            "title": "Format",
+            "type": "string"
+          }
+        },
+        "required": [
+          "target",
+          "location",
+          "max_age_minutes",
+          "format"
+        ],
+        "title": "get_topology_diagramArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "get_topology_diagramDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "trace_mac_path",
+      "title": null,
+      "description": "Trace a MAC through observed topology toward its likely access port. Source device\n        can be empty for inferred root. Set refresh true for current data; workers must be 1-16.",
+      "inputSchema": {
+        "properties": {
+          "mac_address": {
+            "title": "Mac Address",
+            "type": "string"
+          },
+          "source_device": {
+            "title": "Source Device",
+            "type": "string"
+          },
+          "max_age_minutes": {
+            "title": "Max Age Minutes",
+            "type": "integer"
+          },
+          "refresh": {
+            "title": "Refresh",
+            "type": "boolean"
+          },
+          "workers": {
+            "title": "Workers",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "mac_address",
+          "source_device",
+          "max_age_minutes",
+          "refresh",
+          "workers"
+        ],
+        "title": "trace_mac_pathArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "trace_mac_pathDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": null,
+        "openWorldHint": true
+      },
+      "meta": null,
+      "execution": null
+    }
+  ]
+}

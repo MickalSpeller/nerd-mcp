@@ -1,0 +1,24 @@
+name: Bug report
+description: Report a reproducible NERD problem using synthetic data
+body:
+  - type: markdown
+    attributes:
+      value: Never include credentials, live configurations, or customer data.
+  - type: input
+    id: version
+    attributes:
+      label: NERD version
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and reproduction
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
