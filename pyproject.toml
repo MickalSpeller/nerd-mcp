@@ -23,10 +23,10 @@ classifiers = [
 dependencies = ["netmiko==4.7.0", "paramiko==4.0.0", "jsonschema==4.26.0", "openpyxl==3.1.5", "rich==15.0.0", "pywin32==312; sys_platform == 'win32'"]
 
 [project.optional-dependencies]
-chat = ["openai==3.8.0"]
+chat = ["openai==3.11.0"]
 mcp = ["mcp==1.30.0"]
-full = ["openai==3.8.0", "mcp==1.30.0"]
-test = ["pytest==9.1.1", "pytest-asyncio==1.4.0", "openai==3.8.0", "mcp==1.30.0"]
+full = ["openai==3.11.0", "mcp==1.30.0"]
+test = ["pytest==9.1.1", "pytest-asyncio==1.4.0", "openai==3.11.0", "mcp==1.30.0"]
 
 [project.scripts]
 nerd-mcp = "nerd_mcp.cli:main"
