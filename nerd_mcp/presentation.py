@@ -556,7 +556,7 @@ def render_health(console: Console, results: list[dict]) -> None:
     styles = {"healthy": "green", "warning": "yellow", "critical": "red", "unknown": "dim"}
     # Explicit box style keeps contract output identical across Windows and POSIX.
     table = Table(
-        title="Network Health", header_style=f"bold {PRIMARY_COLOR}", box=box.ROUNDED
+        title="Network Health", header_style=f"bold {PRIMARY_COLOR}", box=box.SQUARE
     )
     table.add_column("Device", min_width=12, no_wrap=True)
     table.add_column("Health", width=8, no_wrap=True)
