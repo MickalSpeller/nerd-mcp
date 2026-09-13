@@ -1,0 +1,14 @@
+name: Feature request
+description: Suggest a feature or workflow improvement
+body:
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case
+      description: Describe the outcome and provide synthetic examples.
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Security and compatibility considerations
