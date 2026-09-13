@@ -4,6 +4,9 @@ NERD (**Network Engineering Reconnaissance & Discovery**) is a local Python tool
 
 ![NERD CLI showing a network diagnosis](docs/images/screen_01.png)
 
+![NERD CLI showing a network diagnosis](docs/images/screen_02.png)
+
+
 ## Capabilities
 
 - Import and search CSV or XLSX inventories stored in local SQLite.
