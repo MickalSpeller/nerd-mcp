@@ -18,6 +18,7 @@ from nerd_mcp.presentation import (
     header,
     read_prompt,
     render_answer,
+    render_version,
     render_configuration,
     render_execution,
     render_diagnosis,
@@ -230,9 +231,19 @@ def test_chat_uses_nerd_v2_banner_and_color_scheme():
     assert "Network Engineering Reconnaissance & Discovery" in text
     assert "Vendor-agnostic network reconnaissance and discovery" not in text
     assert "Device output is sent to OpenAI for interpretation" not in text
+    assert "/version" in text
     assert PRIMARY_COLOR == "#00D7FF"
     assert BANNER_COLOR == "#00D9FF"
     assert PROMPT_COLOR == "green"
+
+
+def test_chat_version_displays_build_and_creator():
+    output = io.StringIO()
+    render_version(Console(file=output, width=120, color_system=None), "1.7.0")
+    text = output.getvalue()
+    assert "N.E.R.D. MCP" in text
+    assert "Version: 1.7.0" in text
+    assert "Created by Mickal Speller" in text
 
 
 def test_chat_uses_exact_nerd_v2_prompt(monkeypatch):

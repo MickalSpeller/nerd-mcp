@@ -14,11 +14,13 @@ from time import perf_counter
 from jsonschema import ValidationError, validate
 from rich.console import Console
 
+from . import __version__
 from .execution import ExecutionTrace
 from .application.diagnosis import is_diagnostic_request
 from .presentation import (
     PRIMARY_COLOR, header, read_prompt, render_answer, render_change_plan,
     render_baseline_metadata, render_change_result, render_diagnosis, render_execution,
+    render_version,
 )
 from .chat_optimization import (
     MAX_AGENT_CALLS, MEMORY_CHARS, RECENT_TURNS, ChatPlan, plan_question,
@@ -995,7 +997,9 @@ async def run_chat(db_path, mock=False, show_footer=True, baseline_service=None,
                 command = question.strip().lower()
                 if command in {"/exit", "exit", "quit"}:
                     break
-                if command == "/reset":
+                if command == "/version":
+                    render_version(console, __version__)
+                elif command == "/reset":
                     chat.reset()
                     console.print("Conversation cleared.", style="dim")
                 elif command in {"/footer on", "/footer off"}:

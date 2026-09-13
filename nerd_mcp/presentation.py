@@ -37,8 +37,17 @@ def header(console: Console, mock: bool = False) -> None:
     if mock:
         console.print("[yellow]MOCK MODE · simulated device data · OpenAI API remains live[/yellow]")
         console.print()
-    console.print("[dim]Ask about your network or type /reset, /footer on|off, or /exit.[/dim]")
+    console.print(
+        "[dim]Ask about your network or type /version, /reset, /footer on|off, or /exit.[/dim]"
+    )
     console.print()
+
+
+def render_version(console: Console, version: str) -> None:
+    """Display the local NERD build version and creator."""
+    console.print(f"[bold {PRIMARY_COLOR}]N.E.R.D. MCP[/bold {PRIMARY_COLOR}]")
+    console.print(f"Version: {version}")
+    console.print("Created by Mickal Speller")
 
 
 def read_prompt(console: Console) -> str:

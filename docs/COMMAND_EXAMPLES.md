@@ -148,6 +148,7 @@ python -m nerd_mcp chat
 At the `Ask N.E.R.D. ›` prompt, examples include:
 
 ```text
+/version
 Tell me about edge-router-01.
 Show all interfaces on access-switch-01.
 Is OSPF running on edge-router-01?
@@ -161,6 +162,8 @@ What devices are connected to access-switch-01?
 Compare edge-router-01 with its configuration baseline.
 Update the edge-router-01 baseline.
 ```
+
+`/version` displays the installed NERD version and creator without making an OpenAI API call.
 
 Chat uses OpenAI for natural-language interpretation. Direct commands such as `inspect`, `health`, and `devices list` do not require OpenAI.
 
@@ -213,4 +216,3 @@ python -m nerd_mcp serve --mock
 ```
 
 A stdio MCP server normally waits silently for an MCP client and does not display an interactive prompt. See [MCP integration](MCP.md) for client configuration.
-
