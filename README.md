@@ -2,6 +2,8 @@
 
 NERD (**Network Engineering Reconnaissance & Discovery**) is a local Python toolkit for inventory, read-only inspection, topology, health checks, configuration baselines, and natural-language analysis. It connects over SSH with Netmiko and exposes read-only Model Context Protocol (MCP) tools.
 
+![NERD CLI showing a network diagnosis](docs/images/screen_01.png)
+
 ## Capabilities
 
 - Import and search CSV or XLSX inventories stored in local SQLite.
