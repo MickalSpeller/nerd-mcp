@@ -20,7 +20,7 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
   "Topic :: System :: Networking",
 ]
-dependencies = ["netmiko==4.7.0", "paramiko==4.0.0", "jsonschema==4.26.0", "openpyxl==3.1.5", "rich==15.0.0", "pywin32==312; sys_platform == 'win32'"]
+dependencies = ["netmiko==4.7.0", "paramiko==5.0.0", "jsonschema==4.26.0", "openpyxl==3.1.5", "rich==15.0.0", "pywin32==312; sys_platform == 'win32'"]
 
 [project.optional-dependencies]
 chat = ["openai==3.8.0"]
