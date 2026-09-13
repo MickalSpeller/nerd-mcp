@@ -1,6 +1,8 @@
 # NERD MCP
 
-NERD (**Network Engineering Reconnaissance & Discovery**) is a local Python toolkit for inventory, read-only inspection, topology, health checks, configuration baselines, and natural-language analysis. It connects over SSH with Netmiko and exposes read-only Model Context Protocol (MCP) tools.
+NERD (**Network Engineering Reconnaissance & Discovery**) is designed by network engineers for network engineers. It provides a natural-language and command-line interface for querying network inventory, inspecting devices, diagnosing network conditions, and deploying controlled configuration changes.
+
+NERD connects to network devices over SSH and exposes read-only Model Context Protocol (MCP) tools. Its MCP server can be used by your preferred LLM client when that client supports local stdio MCP servers. The included terminal chat currently uses the OpenAI Responses API. Configuration deployment remains a local CLI capability with explicit write enablement, review, approval, verification, and separate save controls.
 
 ![NERD CLI showing a network diagnosis](docs/images/screen_01.png)
 

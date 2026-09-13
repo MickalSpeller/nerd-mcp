@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "nerd-mcp-assistant"
 version = "1.7.0"
-description = "Vendor-agnostic Network Engineering Reconnaissance & Discovery tools and terminal assistant"
+description = "Network inventory, device diagnostics, and controlled configuration deployment for network engineers"
 readme = "README.md"
 license = "Apache-2.0"
 license-files = ["LICENSE"]
